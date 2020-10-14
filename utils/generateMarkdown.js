@@ -26,7 +26,7 @@ This project is licensed under the ${license} license.`
 }
 
 function generateMarkdown(data) {
-  return `# ${data.title}
+  return `## ${data.title}
 ${renderLicenseBadge(data.license)}
 
 ## Description

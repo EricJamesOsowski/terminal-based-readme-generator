@@ -1,5 +1,5 @@
 const inquirer = require ('inquirer');
-const generateMarkdown = require ('./generateMarkdown.js');
+const generateMarkdown = require ('./utils/generateMarkdown.js/index.js');
 const fs = require ('fs')
 
 inquirer.prompt([
@@ -32,7 +32,7 @@ inquirer.prompt([
       },
       {
         type: "input",
-        message: "List your contributors",
+        message: "Describe guidelines for contributing to your project",
         name: "contributing"
       },
       {
@@ -47,14 +47,22 @@ inquirer.prompt([
       },
       {
         type: "input",
-        message: "What is your user name?",
+        message: "What is your GitHub user name?",
         name: "github"
       }
   ])
   .then(function(response) {
-      console.log(generateMarkdown(response));
-    
-  });
+
+      fs.appendFile("README.md", (generateMarkdown(response)), function(err) {
+
+        if (err) {
+          console.log(err);
+        }
+        else {
+          console.log("Commit logged!");
+        }
+      });
+    });
 
 //  pass in object to generateMarkdown
 //  has to have property title, license, description, installation, usage, contributing, test, email, github
