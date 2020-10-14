@@ -1,5 +1,5 @@
 const inquirer = require ('inquirer');
-const generateMarkdown = require ('./utils/generateMarkdown.js/index.js');
+const generateMarkdown = require ('./utils/generateMarkdown.js');
 const fs = require ('fs')
 
 inquirer.prompt([
@@ -53,7 +53,8 @@ inquirer.prompt([
   ])
   .then(function(response) {
 
-      fs.appendFile("README.md", (generateMarkdown(response)), function(err) {
+
+        fs.writeFile("README.md", (generateMarkdown(response)), function(err) {
 
         if (err) {
           console.log(err);
