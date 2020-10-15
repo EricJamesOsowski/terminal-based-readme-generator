@@ -8,7 +8,7 @@ Project Title:
 
 This is a command line based README generator, it generates a README based off of user input
 
-https://drive.google.com/file/d/1APi_XeVgvM0oNQjVhGt-5jV7I3JNWpv9/view
+https://drive.google.com/file/d/1APi_XeVgvM0oNQjVhGt-5jV7I3JNWpv9/view?usp=sharing
 
 
 ## Table of Contents 
